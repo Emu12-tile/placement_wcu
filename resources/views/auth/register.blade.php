@@ -128,7 +128,7 @@
                         <div class="auth-form-wrap pt-xl-0 pt-70">
                             <div class="auth-form w-xl-30 w-lg-55 w-sm-75 w-100">
                                 <a class="auth-brand text-center d-block mb-20" href="#">
-                                    <img class="brand-img" src="{{ asset('assets/dist/img/wolkitelogo.jpg') }}"
+                                    <img class="brand-img" src="{{ asset('assets/dist/img/wcu.png') }}"
                                         style="width:100px; height:100px" alt="brand" />
                                 </a>
                                 <form method="POST" action="{{ route('register') }}">
@@ -202,7 +202,7 @@
                                         {{ __('ይመዝገቡ') }}
                                     </button>
                                     <div class="option-sep">ወይም</div>
-{{-- Already have an account? --}}
+                                    {{-- Already have an account? --}}
                                     <p class="text-center">ክዚህ በፊት ተመዝግበዋል? <a href="{{ route('login') }}">በመለያ
                                             ይግቡ</a></p>
                                 </form>

@@ -9,7 +9,7 @@
 
 
                     <h3 class="hk-sec-title text-white text-center color-wrap  "
-                        style=" background-color:#456896; padding:10px;">ወልቂጤ ዩኒቨርሲቲ የሰራተኞች የስራ
+                        style=" background-color:#6B021C; padding:10px;">ዋቸሞ ዩኒቨርሲቲ የሰራተኞች የስራ
                         ድልድል ማወዳደርያ ቅፅ</h3>
                     <div class="row">
                         <div class="col-sm">
@@ -97,7 +97,7 @@
 
 
                                 <h3 class="text-white text-center mt-3 mb-4  "
-                                    style=" background-color:#456896; margin:center">
+                                    style=" background-color:#6B021C; margin:center">
                                     አገልግሎት
                                 </h3>
 
@@ -127,15 +127,13 @@
                                     <div class="col-md-6 form-group">
                                         <label for="serviceBeforeDiplo"> አገልግሎት ከዲፕሎማ በፊት(በዓመት,የስራ መደብ)</label>
                                         <input type="text" value="{{ $form->serviceBeforeDiplo }}"
-                                            name="serviceBeforeDiplo"class="form-control " id="serviceBeforeDiplo"
-                                            readonly>
+                                            name="serviceBeforeDiplo"class="form-control " id="serviceBeforeDiplo" readonly>
 
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label for="serviceAfterDiplo"> አገልግሎት ከዲፕሎማ/ዲግሪ በኋላ(በዓመት, የስራ መደብ)</label>
                                         <input type="text" value="{{ $form->serviceAfterDiplo }}"
-                                            name="serviceAfterDiplo"class="form-control " id="serviceAfterDiplo"
-                                            readonly>
+                                            name="serviceAfterDiplo"class="form-control " id="serviceAfterDiplo" readonly>
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label for="resultOfrecentPerform" class=""> የሁለት ተከታታይ የቅርብ ጊዜ የሥራ

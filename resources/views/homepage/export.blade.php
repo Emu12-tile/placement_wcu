@@ -65,7 +65,7 @@
 
     <div id="element-to-print">
         {{-- @foreach ($formList as $i => $form) --}}
-        <h1 style="font-family: Noto Sans Ethiopic, sans-serif; text-align:center ">ወልቂጤ ዩኒቨርሲቲ </h1>
+        <h1 style="font-family: Noto Sans Ethiopic, sans-serif; text-align:center ">ዋቸሞ ዩኒቨርሲቲ </h1>
         <h3 style="text-align:center">የአስተዳደር ሠራተኞች ፕሮፋይል</h3>
         <p>1/ የሠራተኛው ሙሉ ስም:-{{ $form->firstName }} {{ $form->middleName }} {{ $form->lastName }} </p>
         <p>2/ አሁን ያሉበት የስራ ክፍል፦{{ $form->jobcat }} </p>
@@ -80,7 +80,7 @@
 
                     <th>የትምህርት ደረጃ</th>
                     <th>የትምህርት ዝግጅት</th>
-                    {{-- <th>የጨረሱበት ዓመት</th> --}}
+                    <th>የጨረሱበት ዓመት</th>
 
 
 
@@ -96,7 +96,7 @@
 
                         <td> {{ $fo->level ?? '' }}</td>
                         <td> {{ $fo->discipline ?? '' }}</td>
-                        {{-- <td>{{ $fo->completion_date ?? '' }} </td> --}}
+                        <td>{{ $fo->completion_date ?? '' }} </td>
                     </tr>
                     {{-- <tr>
 

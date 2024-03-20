@@ -359,14 +359,14 @@ class FormController extends Controller
             if (
                 isset($value['level']) &&
                 isset($value['discipline'])
-                // &&
-                // isset($value['completion_date'])
+                &&
+                isset($value['completion_date'])
             ) {
                 Education::create([
                     'form_id' => $form->id,
                     'level' => $value['level'],
                     'discipline' => $value['discipline'],
-                    // 'completion_date' => $value['completion_date'],
+                    'completion_date' => $value['completion_date'],
                 ]);
             }
         }
@@ -387,7 +387,7 @@ class FormController extends Controller
                     $education->level = $value['level'];
                     $education->discipline = $value['discipline'];
 
-                    // $education->completion_date = $value['completion_date'];
+                    $education->completion_date = $value['completion_date'];
                     // dd($experience);
                     $education->update();
                 }

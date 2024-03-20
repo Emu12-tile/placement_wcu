@@ -9,7 +9,7 @@
 
 
                     <h3 class="hk-sec-title text-white text-center color-wrap  "
-                        style=" background-color:#456896; padding:10px;">ወልቂጤ ዩኒቨርሲቲ የሰራተኞች የስራ
+                        style=" background-color:#6B021C; padding:10px;">ዋቸሞ ዩኒቨርሲቲ የሰራተኞች የስራ
                         ድልድል ማወዳደርያ ቅፅ</h3>
                     <div class="row">
                         <div class="col-sm">
@@ -103,7 +103,7 @@
 
                                 </div>
                                 <h3 class="text-white text-center mt-3 mb-4  "
-                                    style=" background-color:#456896; margin:center">
+                                    style=" background-color:#6B021C; margin:center">
                                     ያለዎት የትምህርት ዝግጅትና የትምህርት ደረጃ
                                 </h3>
                                 {{-- <div class="row">
@@ -162,25 +162,25 @@
                                         <input type="hidden" value="{{ $fo->id }} "
                                             name="addMoreFields[{{ $i }}][id]"class="form-control "
                                             id="inputEmail3">
-                                        <div class="col-md-5 form-group">
+                                        <div class="col-md-4 form-group">
                                             <label for="level">የትምህርት ደረጃ</label>
                                             <input type="text" value="{{ $fo->level }} "
                                                 name="addMoreFields[{{ $i }}][level]"class="form-control "
                                                 id="inputEmail3">
                                         </div>
 
-                                        <div class="col-md-5 form-group">
+                                        <div class="col-md-4 form-group">
                                             <label for="discipline">የትምህርት ዝግጅት</label>
                                             <input type="text" value="{{ $fo->discipline }}"
                                                 name="addMoreFields[{{ $i }}][discipline]"class="form-control "
                                                 id="inputEmail3">
                                         </div>
-                                        {{-- <div class="col-md-4 form-group">
+                                        <div class="col-md-3 form-group">
                                             <label for="completion_date">completion_date</label>
                                             <input type="text" value="{{ $fo->completion_date }}"
                                                 name="addMoreFields[{{ $i }}][completion_date]"class="form-control "
                                                 id="inputEmail3">
-                                        </div> --}}
+                                        </div>
 
                                     </div>
                                 @endforeach
@@ -190,18 +190,24 @@
 
                                             <div class=" educ row">
 
-                                                <div class="col-md-5 form-group">
+                                                <div class="col-md-4 form-group">
                                                     <label for="level">የትምህርት ደረጃ</label>
                                                     <input type="text" value="{{ old('level') }} "
                                                         name="MoreFields[0][level]"class="form-control " id="inputEmail3"
                                                         placeholder="level">
                                                 </div>
 
-                                                <div class="col-md-5 form-group">
+                                                <div class="col-md-4 form-group">
                                                     <label for="discipline">የትምህርት ዝግጅት</label>
                                                     <input type="text" value="{{ old('discipline') }}"
                                                         name="MoreFields[0][discipline]"class="form-control "
                                                         id="inputEmail3" placeholder="discipline">
+                                                </div>
+                                                 <div class="col-md-3 form-group">
+                                                    <label for="completion_date">Completion date</label>
+                                                    <input type="text" value="{{ old('completion_date') }}"
+                                                        name="MoreFields[0][completion_date]"class="form-control "
+                                                        id="inputEmail3" placeholder="completion_date">
                                                 </div>
 
                                                 <div>
@@ -226,7 +232,7 @@
 
                                 <h3 class="text-white text-center me
                                         mt-3 mb-4 "
-                                    style=" background-color:#456896; margin:center">
+                                    style=" background-color:#6B021C; margin:center">
                                     አገልግሎት
                                 </h3>
 
@@ -286,7 +292,7 @@
 
                                 </div>
                                 <h3 class="text-white text-center mt-3 mb-4   "
-                                    style=" background-color:#456896; margin:center nav">የስራ ልምድ(በኢትዮጵያ አቆጣጠር
+                                    style=" background-color:#6B021C; margin:center nav">የስራ ልምድ(በኢትዮጵያ አቆጣጠር
                                     ብቻ)</h3>
 
                                 @foreach ($form->experiences ?? [] as $i => $fo)
@@ -389,11 +395,11 @@
 
 
                                 <h3 class="text-white text-center mt-3 mb-4 navigation "
-                                    style=" background-color:#456896; margin:center"> የሚወዳደሩበት የስራ ክፍልና
+                                    style=" background-color:#6B021C; margin:center"> የሚወዳደሩበት የስራ ክፍልና
                                     የስራ
                                     መደብ
                                 </h3>
-                                <button class="text-white text-left mt-3 mb-4 mr-150" style=" background-color:#456896">
+                                <button class="text-white text-left mt-3 mb-4 mr-150" style=" background-color:#6B021C">
                                     ምርጫ 1</button>
 
                                 <div class="row">
@@ -447,7 +453,7 @@
 
 
                                 </div>
-                                <button class="text-white text-left mt-3 mb-4" style=" background-color:#456896">
+                                <button class="text-white text-left mt-3 mb-4" style=" background-color:#6B021C">
                                     ምርጫ 2</button>
                                 <div class="row">
                                     <div class="col-md-6 form-group">
@@ -527,28 +533,24 @@
         $(document).ready(function() {
 
             var i = 0
-            var j=0
+            var j = 0
             $(".addRow").click(function(e) {
                 ++i;
                 e.preventDefault();
                 $("#myform").append(`
                         <div class="row" >
                                     <div class="col-sm">
-
                                             <div class=" formgr row">
-
                                                 <div class="col-md-3">
-                                       <label for="startingDate"></label>
-
+                                                   <label for="startingDate"></label>
                                                     <input type="date" name="addFields[${i}][startingDate]" value="{{ old('startingDate') }}"
                                                         class="form-control  @error('startingDate') is-invalid @enderror"
-                                                        id="startingDate" placeholder=" ">
+                                                        id="startingDate" placeholder="starting date ">
                                                     @error('startingDate')
                                                         <span class=" error invalid-feedback">
                                                             <strong>{{ $message }}</strong>
                                                         </span>
                                                     @enderror
-
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="endingDate"></label>
@@ -563,7 +565,6 @@
                                                 </div>
                                                 <div class="col-md-4">
                                                     <label for="positionyouworked"></label>
-
                                                     <input type="text" name="addFields[${i}][positionyouworked]" value="{{ old('positionyouworked') }}"
                                                         class="form-control  @error('positionyouworked') is-invalid @enderror"
                                                         id="positionyouworked" placeholder="የሰሩበት የስራ መደብ">
@@ -572,10 +573,8 @@
                                                             <strong>{{ $message }}</strong>
                                                         </span>
                                                     @enderror
-
                                                 </div>
                                                 <div>
-
                                                     <a href="javascript:void(0)" class="btn btn-danger  removeRow mt-20 "
                                                         style=" border-radius:50%">-</a>
                                                 </div>
@@ -605,18 +604,24 @@
                 <div class="row">
                     <div class="col-sm">
                        <div class=" educ row">
-                            <div class="col-md-5 form-group">
-                                <label for="level">የትምህርት ደረጃ</label>
+                            <div class="col-md-4 form-group">
+                                <label for="level"></label>
                                 <input type="text" value="{{ old('level') }} " placeholder="level"
                                 name="MoreFields[${j}][level]"class="form-control "
                                 id="inputEmail3" >
                             </div>
 
-                            <div class="col-md-5 form-group">
-                                <label for="discipline">የትምህርት ዝግጅት</label>
+                            <div class="col-md-4 form-group">
+                                <label for="discipline"></label>
                                 <input type="text" value="{{ old('discipline') }}"
                                 name="MoreFields[${j}][discipline]"class="form-control "
                                 id="inputEmail3" placeholder="discipline">
+                            </div>
+                              <div class="col-md-3 form-group">
+                                <label for="completion_date"></label>
+                                <input type="text" value="{{ old('completion_date') }}"
+                                name="MoreFields[${j}][completion_date]"class="form-control "
+                                id="inputEmail3" placeholder="completion_date">
                             </div>
 
                             <div>

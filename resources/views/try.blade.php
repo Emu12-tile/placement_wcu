@@ -8,7 +8,7 @@
                     <section class="hk-sec-wrapper mt-100">
                         {{--
                         <h3 class="hk-sec-title text-white text-center color-wrap  "
-                            style=" background-color:#456896; padding:10px;">አዳማ  ሳይንስና ቴክኖሎጂ ዩኒቨርሲቲ የሰራተኞች የ ስራ
+                            style=" background-color:#6B021C; padding:10px;">አዳማ  ሳይንስና ቴክኖሎጂ ዩኒቨርሲቲ የሰራተኞች የ ስራ
                             ድልድል ማወዳደርያ ቅፅ</h3>
                         <p class="mb-25"> </p>
 
@@ -26,7 +26,7 @@
 
 
                         <h3 class="hk-sec-title text-white text-center color-wrap  "
-                            style=" background-color:#456896; padding:10px;">ወልቂጤ ዩኒቨርሲቲ የሰራተኞች የስራ
+                            style=" background-color:#6B021C; padding:10px;">ዋቸሞ ዩኒቨርሲቲ የሰራተኞች የስራ
                             ድልድል ማወዳደርያ ቅፅ</h3>
                         {{-- <div class="row">
                             <div class="col-sm">
@@ -168,7 +168,7 @@
                                             </div>
                                         </div>
                                         <h3 class="text-white text-center mt-3 mb-4  "
-                                            style=" background-color:#456896; margin:center">
+                                            style=" background-color:#6B021C; margin:center">
                                             ያለዎትን የትምህርት ዝግጅትና የትምህርት ደረጃ ያስገቡ
                                         </h3>
 
@@ -215,12 +215,12 @@
 
 
                                         <h3 class="text-white text-center mt-3 mb-4 navigation "
-                                            style=" background-color:#456896; margin:center"> የሚወዳደሩበት የስራ ክፍልና
+                                            style=" background-color:#6B021C; margin:center"> የሚወዳደሩበት የስራ ክፍልና
                                             የስራ
                                             መደብ
                                         </h3>
                                         <button class="text-white text-left mt-3 mb-4 mr-150"
-                                            style=" background-color:#456896">
+                                            style=" background-color:#6B021C">
                                             ምርጫ 1</button>
 
                                         <div class="row">
@@ -274,7 +274,7 @@
 
 
                                         </div>
-                                        <button class="text-white text-left mt-3 mb-4" style=" background-color:#456896">
+                                        <button class="text-white text-left mt-3 mb-4" style=" background-color:#6B021C">
                                             ምርጫ 2</button>
                                         <div class="row">
                                             <div class="col-md-6 form-group">
@@ -445,7 +445,7 @@
 
                                         </div>
                                         <h3 class="text-white text-center mt-3 mb-4   "
-                                            style=" background-color:#456896; margin:center nav">የስራ ልምድ(በኢትዮጵያ አቆጣጠር
+                                            style=" background-color:#6B021C; margin:center nav">የስራ ልምድ(በኢትዮጵያ አቆጣጠር
                                             ብቻ)</h3>
                                         <div id="myform">
                                             <div class="row">
@@ -530,7 +530,6 @@
     </div>
 @endsection
 @section('javascript')
-
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"
         integrity="sha512-eyHL1atYNycXNXZMDndxrDhNAegH2BDWt1TmkXJPoGf1WLlNYt08CSjkqF5lnCRmdm3IrkHid8s2jOUY4NIZVQ=="

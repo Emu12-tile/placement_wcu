@@ -141,7 +141,7 @@ class CreateFormController extends Controller
                 "form_id" => $form->id,
                 "discipline" => $val["discipline"],
                 "level" => $val["level"],
-                // "completion_date" => $val["completion_date"],
+                "completion_date" => $val["completion_date"],
 
             ]);
         }

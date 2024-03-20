@@ -196,10 +196,10 @@
 
                                                             <td>
                                                                 @foreach ($edu as $type)
-                                                                    ({{ $type->leve }},
-                                                                    {{ $type->discipline}},({{ $type->competion_date }})
+                                                                    ({{ $type->level }},
+                                                                    {{ $type->discipline}},{{ $type->competion_date }})
                                                                     ,
-                                                                
+
                                                                 @endforeach
                                                             </td>
                                                             <td>

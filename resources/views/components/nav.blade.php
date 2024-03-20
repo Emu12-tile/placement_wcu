@@ -1,15 +1,15 @@
-<nav class="navbar navbar-expand-xl navbar-dark fixed-top hk-navbar" style=" background-color:#456896">
+<nav class="navbar navbar-expand-xl navbar-dark fixed-top hk-navbar" style=" background-color:#6B021C">
     <a id="navbar_toggle_btn" class="navbar-toggle-btn nav-link-hover" href="javascript:void(0);"><i
             class="ion ion-ios-menu"></i></a>
     <a class="navbar-brand" href="{{ route('home') }}">
         {{-- <img class="brand-img d-inline-block align-top " src="{{ asset('assets/dist/img/aastuimage.jpg') }}"
             style="width:80px; height:80px" alt="brand" /> --}}
-        <img class="brand-img d-inline-block " src="{{ asset('assets/dist/img/wolkite.png') }}"
+        <img class="brand-img d-inline-block " src="{{ asset('assets/dist/img/wcu.png') }}"
             style="width:auto; height:100px" alt="brand" />
         {{-- <nav class="navbar navbar-expand-xl navbar-light  hk-navbar hk-navbar-alt shadow-none"
-                    style=" background-color:#456896"> --}}
+                    style=" background-color:#6B021C"> --}}
 
-        {{-- <h5 class="text-white font-24 font-weight-600 ml-50 "> ወልቂጤ ዩኒቨርሲቲ</h5> --}}
+        {{-- <h5 class="text-white font-24 font-weight-600 ml-50 "> ዋቸሞ ዩኒቨርሲቲ</h5> --}}
         {{--  ለአመልካቾች ግምገማ --}}
     </a>
     <ul class="navbar-nav hk-navbar-content">

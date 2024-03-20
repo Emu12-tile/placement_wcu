@@ -11,7 +11,7 @@
 
 
                         <h3 class="hk-sec-title text-white text-center color-wrap  "
-                            style=" background-color:#456896; padding:10px;">ወልቂጤ ዩኒቨርሲቲ የሰራተኞች የስራ
+                            style=" background-color:#6B021C; padding:10px;">ዋቸሞ ዩኒቨርሲቲ የሰራተኞች የስራ
                             ድልድል ማወዳደርያ ቅፅ</h3>
                         <div class="row">
                             <div class="col-sm">
@@ -80,7 +80,7 @@
                                                         value="{{ old('email') }}">
                                                     @error('email')
                                                         <span class=" error invalid-feedback">
-                                                            <strong>የወልቂጤ ኢሜይል ብቻ ይጠቀሙ</strong>
+                                                            <strong>የዋቸሞ ኢሜይል ብቻ ይጠቀሙ</strong>
                                                         </span>
                                                     @enderror
 
@@ -188,7 +188,7 @@
                                             </div> --}}
                                         </div>
                                         <h3 class="text-white text-center mt-3 mb-4  "
-                                            style=" background-color:#456896; margin:center">
+                                            style=" background-color:#6B021C; margin:center">
                                             ያለዎትን የትምህርት ዝግጅትና የትምህርት ደረጃ ያስገቡ
                                         </h3>
 
@@ -198,7 +198,7 @@
                                                 <div class=" educ row">
 
 
-                                                    <div class="col-md-5">
+                                                    <div class="col-md-4">
 
                                                         <label for="level">የትምህርት ደረጃ</label>
                                                         <input type="text" name="addMoreFields[0][level]"
@@ -212,7 +212,7 @@
                                                         @enderror
 
                                                     </div>
-                                                    <div class="col-md-5">
+                                                    <div class="col-md-4">
                                                         <label for="discipline">የትምህርት ዝግጅት </label>
                                                         <input type="text" name="addMoreFields[0][discipline]"
                                                             value="{{ old('discipline') }}"
@@ -225,7 +225,7 @@
                                                         @enderror
                                                     </div>
 
-                                                    {{-- <div class="col-md-4">
+                                                    <div class="col-md-3">
                                                         <label for="completion_date">completion_date </label>
                                                         <input type="text" name="addMoreFields[0][completion_date]"
                                                             value="{{ old('completion_date') }}"
@@ -236,7 +236,7 @@
                                                                 <strong>{{ $message }}</strong>
                                                             </span>
                                                         @enderror
-                                                    </div> --}}
+                                                    </div>
 
                                                     <div>
                                                         <a href="javascript:void(0)"
@@ -249,10 +249,10 @@
 
 
                                         <h3 class="text-white text-center mt-3 mb-4 navigation "
-                                            style=" background-color:#456896; margin:center">
+                                            style=" background-color:#6B021C; margin:center">
                                         </h3>
                                         {{-- <button class="text-white text-left mt-3 mb-4 mr-150"
-                                            style=" background-color:#456896">
+                                            style=" background-color:#6B021C">
                                             ምርጫ 1</button>
 
                                         <div class="row">
@@ -306,7 +306,7 @@
 
 
                                         </div>
-                                        <button class="text-white text-left mt-3 mb-4" style=" background-color:#456896">
+                                        <button class="text-white text-left mt-3 mb-4" style=" background-color:#6B021C">
                                             ምርጫ 2</button>
                                         <div class="row">
                                             <div class="col-md-6 form-group">
@@ -479,7 +479,7 @@
 
                                         </div>
                                         <h3 class="text-white text-center mt-3 mb-4   "
-                                            style=" background-color:#456896; margin:center nav">የስራ ልምድ(በኢትዮጵያ አቆጣጠር
+                                            style=" background-color:#6B021C; margin:center nav">የስራ ልምድ(በኢትዮጵያ አቆጣጠር
                                             ብቻ)</h3>
                                         <div id="myform">
                                             <div class="row">
@@ -651,9 +651,9 @@
                 <div class="row">
                     <div class="col-sm">
                         <div class=" educ row">
-                            <div class="col-md-5">
+                            <div class="col-md-4">
 
-                                <label for="level">የትምህርት ደረጃ</label>
+                                <label for="level"></label>
                                 <input type="text" name="addMoreFields[${j}][level]"
                                 value="{{ old('level') }}"
                                 class="form-control  @error('level') is-invalid @enderror"
@@ -665,14 +665,27 @@
                                  @enderror
 
                             </div>
-                            <div class="col-md-5">
-                                <label for="discipline">የትምህርት ዝግጅት </label>
+                            <div class="col-md-4">
+                                <label for="discipline"> </label>
                                 <input type="text"
                                     name="addMoreFields[${j}][discipline]"
                                     value="{{ old('discipline') }}"
                                     class="form-control  @error('discipline') is-invalid @enderror"
                                     id="discipline" placeholder=" discipline">
                                 @error('discipline')
+                                    <span class=" error invalid-feedback">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                               <div class="col-md-3">
+                                <label for="discipline"></label>
+                                <input type="text"
+                                    name="addMoreFields[${j}][completion_date]"
+                                    value="{{ old('completion_date') }}"
+                                    class="form-control  @error('completion_date') is-invalid @enderror"
+                                    id="completion_date" placeholder=" completion_date">
+                                @error('completion_date')
                                     <span class=" error invalid-feedback">
                                         <strong>{{ $message }}</strong>
                                     </span>

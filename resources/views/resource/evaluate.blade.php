@@ -375,8 +375,8 @@
                                                             <td>
                                                                 @foreach ($edu as $type)
                                                                     ({{ $type->level }},
-                                                                    {{ $type->discipline }})
-                                                                    {{-- {{$type->completion_date}}) --}}
+                                                                    {{ $type->discipline }},
+                                                                    {{$type->completion_date}})
                                                                     ,
                                                                 @endforeach
                                                             </td>
