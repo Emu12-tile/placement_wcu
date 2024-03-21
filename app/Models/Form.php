@@ -19,7 +19,7 @@ class Form extends Model
         'phone',
         'startingDate',
         'endingDate',
-
+        'disability',
         'sex',
         'fee',
         'positionofnow',
@@ -44,7 +44,7 @@ class Form extends Model
         'level',
         // 'tag_slug',
         // 'firstdergee'
-
+        'registeredBy',
         'ethinicity',
         'birth_date',
         'jobcat',

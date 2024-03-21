@@ -58,28 +58,29 @@ class CreateFormController extends Controller
             'middleName' => 'required',
             'lastName' => 'required',
             'sex' => 'required',
-            'email' => ['nullable', 'string', 'email', 'max:255',  'regex:/(.*)@wku.edu.et/i'],
+            'email' => ['nullable', 'string', 'email', 'max:255',  'regex:/(.*)@wcu.edu.et/i'],
 
             'phone' => 'nullable',
 
 
-            'positionofnow' => 'required',
-            'ethinicity' => 'required',
-            'birth_date' => 'required',
-            'jobcat' => 'required',
-
-
+            'positionofnow' => 'nullable',
+            'ethinicity' => 'nullable',
+            'birth_date' => 'nullable',
+            'jobcat' => 'nullable',
+            'level' => 'nullable',
+            'disability'=>'nullable',
             'addMoreInputFields.*.startingDate' => 'date|nullable',
             'addMoreInputFields.*.endingDate' => 'date|after:starting_date|nullable',
             'addMoreInputFields.*.positionyouworked' => 'nullable',
-            'UniversityHiringEra' => 'required',
-            'servicPeriodAtUniversity' => 'required',
-            'servicPeriodAtAnotherPlace' => 'required',
-            'serviceBeforeDiplo' => 'required',
-            'serviceAfterDiplo' => 'required',
+            // 'UniversityHiringEra' => 'nullable',
+            // 'servicPeriodAtUniversity' => 'nullable',
+            // 'servicPeriodAtAnotherPlace' => 'nullable',
+            // 'serviceBeforeDiplo' => 'nullable',
+            // 'serviceAfterDiplo' => 'nullable',
             'resultOfrecentPerform' => 'required', 'regex:/^(?:d*.d{1,2}|d+)$/', 'min:1', 'max:100',
             'DisciplineFlaw' => 'required',
-            'MoreRoles' => 'required',
+            'MoreRoles' => 'nullable',
+
 
         ]);
 
@@ -111,7 +112,7 @@ class CreateFormController extends Controller
                     'firstName' => $request->firstName,
                     'middleName' => $request->middleName,
                     'lastName' => $request->lastName,
-                    'email' => $request->email,
+                    // 'email' => $request->email,
                     'phone' => $request->phone,
                     'ethinicity' => $request->ethinicity,
                     'birth_date' => $request->birth_date,
@@ -122,15 +123,17 @@ class CreateFormController extends Controller
                     'positionofnow' => $request->positionofnow,
                     // 'firstdergee' => $request->firstdergee,
                     'sex' => $request->sex,
-                    // 'fee' => $request->fee,
-                    "UniversityHiringEra" => $request->UniversityHiringEra,
-                    "servicPeriodAtUniversity" => $request->servicPeriodAtUniversity,
-                    "servicPeriodAtAnotherPlace" => $request->servicPeriodAtAnotherPlace,
-                    "serviceBeforeDiplo" => $request->serviceBeforeDiplo,
-                    "serviceAfterDiplo" => $request->serviceAfterDiplo,
+                    'level' => $request->level,
+                    // "UniversityHiringEra" => $request->UniversityHiringEra,
+                    // "servicPeriodAtUniversity" => $request->servicPeriodAtUniversity,
+                    // "servicPeriodAtAnotherPlace" => $request->servicPeriodAtAnotherPlace,
+                    // "serviceBeforeDiplo" => $request->serviceBeforeDiplo,
+                    // "serviceAfterDiplo" => $request->serviceAfterDiplo,
                     "resultOfrecentPerform" => $request->resultOfrecentPerform,
                     "DisciplineFlaw" => $request->DisciplineFlaw,
                     "MoreRoles" => $request->MoreRoles,
+                    'registeredBy' =>auth()->user()->name,
+                    'disability'=>$request->disability
                 ]
             );
 

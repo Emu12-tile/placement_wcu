@@ -11,8 +11,8 @@
             <div class="col-xl-12">
 
 
-                @role('admin')
-                    <div class="col-lg-8 col-sm  ml-25 mt-100">
+
+                    {{-- <div class="col-lg-8 col-sm  ml-25 mt-100">
                         <div class=" card card-sm ">
                             <div class="card-body  ">
                                 <h2 class="font-semibold text-center text-xl text-gray-800 leading-tight">
@@ -20,7 +20,134 @@
                                 </h2>
                             </div>
                         </div>
+                    </div> --}}
+                      @role('admin')
+                    <div class="hk-row mt-100">
+                        <div class="col-lg-4 col-md-8">
+                            <div class="card card-sm">
+                                <div class="card-body">
+
+                                    <div class="d-flex justify-content-between mb-5">
+                                        <div>
+                                            <span class="d-block font-16 text-dark font-weight-500">Yirgalem Hailu</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-success font-20 font-weight-500" id="data_32ba">
+                                                {{ $hrs = DB::table('forms')->where('registeredBy', 'Yirgalem Hailu')->count() }}</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-5">
+                                        <div>
+                                            <span class="d-block font-16 text-dark font-weight-500">ABIY ADANE</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-success font-20 font-weight-500" id="data_32b">
+                                                {{ $hrs = DB::table('forms')->where('registeredBy', 'ABIY ADANE')->count() }}</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-center">
+
+                                        <small class="d-block"></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-8">
+                            <div class="card card-sm">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-5">
+                                        <div>
+                                            <span class="d-block font-16 text-dark font-weight-500">Senait Melese</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-success font-20 font-weight-500" id="data_32b">
+                                                {{ $hrs = DB::table('forms')->where('registeredBy', 'senait melese')->count() }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-5">
+                                        <div>
+                                            <span class="d-block font-16 text-dark font-weight-500">Taye Yohannes
+                                                </span>
+                                        </div>
+                                        <div>
+                                            <span class="text-success font-20 font-weight-500" id="data_32ba">
+                                                {{ $hrs = DB::table('forms')->where('registeredBy', 'Taye Yohannes')->count() }}</span></span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="text-center">
+
+                                        <small class="d-block"></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-8">
+                            <div class="card card-sm">
+                                <div class="card-body">
+                                  <div class="d-flex justify-content-between mb-5">
+                                        <div>
+                                            <span class="d-block font-16 text-dark font-weight-500">Asdesach Tesfaye</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-success font-20 font-weight-500" id="data_32bb">
+                                                {{ $hrs = DB::table('forms')->where('registeredBy', 'Asdesach Tesfaye')->count() }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-5">
+                                        <div>
+                                            <span class="d-block font-16 text-dark font-weight-500">Abebe Ayele</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-success font-20 font-weight-500" id="data_32bb">
+                                                {{ $hrs = DB::table('forms')->where('registeredBy', 'abebe ayele')->count() }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+
+                                        <small class="d-block"></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="col-lg-4 col-md-8">
+                            <div class="card card-sm">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-5">
+                                        <div>
+                                            <span class="d-block font-20 text-dark font-weight-500"> አጠቃላይ የተመዘገቡ</span>
+                                        </div>
+                                        <div>
+                                            <span
+                                                class="text-success font-34 font-weight-500">{{ $hrs = DB::table('forms')->count() }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <span class="d-block display-4 text-dark mb-5"><i
+                                                class='fa fa-bar-chart-o'style="font-size:48px;color:">
+                                            </i></span>
+                                        <small class="d-block"></small>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
                     </div>
+                    {{-- <div class="col-lg-8 col-sm  ml-25 mt-100">
+                        <div class=" card card-sm ">
+                            <div class="card-body  ">
+                                <h2 class="font-semibold text-center text-xl text-gray-800 leading-tight">
+                                    {{ __('እንኳን ወደ የሰው ኃብት ዳሽቦርድ በደህና መጡ ') }}
+                                </h2>
+                            </div>
+                        </div>
+                    </div> --}}
+
                 @endrole
                 @role('hr|president')
                     <div class="hk-row mt-100">
