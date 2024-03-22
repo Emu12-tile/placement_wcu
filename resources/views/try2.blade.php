@@ -76,7 +76,7 @@
                                                     <input name="email" type="email"
                                                         class="form-control
                                                         @error('email') is-invalid @enderror"
-                                                        id="email" placeholder="@wku.edu.et"
+                                                        id="email" placeholder="@wcu.edu.et"
                                                         value="{{ old('email') }}">
                                                     @error('email')
                                                         <span class=" error invalid-feedback">
