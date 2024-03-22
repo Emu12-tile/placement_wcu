@@ -65,7 +65,7 @@
 
                                                 </select>
                                             </div>
-                                            <div class="col-md-6 form-group">
+                                            {{-- <div class="col-md-6 form-group">
                                                 <label class="control-label mb-10" for="email">ኢሜይል ( ኢሜይል ብቻ
                                                     ይጠቀሙ) </label>
                                                 <div class="input-group">
@@ -92,6 +92,17 @@
                                                         <strong>{{ $errors->getBag('default')->first('custom_email_error') }}</strong>
                                                     </span>
                                                 @endif
+                                            </div> --}}
+                                             <div class="col-md-6 form-group">
+                                                <label for="ethinicity">ብሔር</label>
+                                                <input type="text" value="{{ old('ethinicity') }}"
+                                                    class="form-control @error('ethinicity') is-invalid @enderror"
+                                                    id="ethinicity" placeholder="ብሔር" name="ethinicity">
+                                                @error('ethinicity')
+                                                    <span class=" error invalid-feedback">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="col-md-6 form-group">
                                                 <label class="control-label mb-10">ስልክ
@@ -118,18 +129,8 @@
 
                                     <div class="form-section">
                                         <div class="row">
-                                            <div class="col-md-6 form-group">
-                                                <label for="ethinicity">ብሔር</label>
-                                                <input type="text" value="{{ old('ethinicity') }}"
-                                                    class="form-control @error('ethinicity') is-invalid @enderror"
-                                                    id="ethinicity" placeholder="ብሔር" name="ethinicity">
-                                                @error('ethinicity')
-                                                    <span class=" error invalid-feedback">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror
-                                            </div>
-                                            <div class="col-md-6 form-group">
+
+                                            {{-- <div class="col-md-6 form-group">
                                                 <label for="birth_date">የትውልድ ዘመን</label>
                                                 <input type="text" value="{{ old('birth_date') }}"
                                                     class="form-control @error('birth_date') is-invalid @enderror"
@@ -139,7 +140,7 @@
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                 @enderror
-                                            </div>
+                                            </div> --}}
                                             <div class="col-md-6 form-group">
                                                 <label for="jobcat">አሁን ያሉበት የስራ ክፍል</label>
                                                 <input type="text" value="{{ old('jobcat') }}"
@@ -163,18 +164,21 @@
                                                     </span>
                                                 @enderror
                                             </div>
+                                             <div class="col-md-6 form-group">
+                                                <label for="level">አሁን ያሉበት ደረጃ</label>
+                                                <input type="text" value="{{ old('level') }}"
+                                                    class="form-control @error('level') is-invalid @enderror"
+                                                    id="level" placeholder="አሁን ያሉበት ደረጃ"
+                                                    name="level">
+                                                @error('level')
+                                                    <span class=" error invalid-feedback">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
 
-                                            {{-- <div class="col-md-4 form-group">
-                                                <label for="level_id">ደረጃ </label>
-                                                <select class="form-control custom-select d-block w-100 " id="level_id"
-                                                    name="level_id">
-                                                    @foreach ($level as $col)
-                                                        <option value="{{ $col->id }}"
-                                                            {{ old('level_id') == $col->id ? 'selected' : '' }}>
-                                                            {{ $col->level }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div> --}}
+
+
                                             {{-- <div class="col-md-4 form-group">
                                                 <label for="fee">ደምወዝ (ETB)</label>
                                                 <input class="form-control @error('fee') is-invalid @enderror"
@@ -251,111 +255,7 @@
                                         <h3 class="text-white text-center mt-3 mb-4 navigation "
                                             style=" background-color:#6B021C; margin:center">
                                         </h3>
-                                        {{-- <button class="text-white text-left mt-3 mb-4 mr-150"
-                                            style=" background-color:#6B021C">
-                                            ምርጫ 1</button>
 
-                                        <div class="row">
-                                            <div class="col-md-6 form-group">
-                                                <label for=""> የስራ ክፍሉ</label>
-
-
-                                                <select class="form-control custom-select d-block w-100 dynamic "
-                                                    value="{{ old('job_category_id') }}" name="job_category_id"
-                                                    id="job_category_id">
-                                                    <option value="">Chose </option>
-                                                    @foreach ($job_category as $col)
-                                                        <option value="{{ $col->id }}"
-                                                            {{ old('job_category_id') == $col->id ? 'selected' : '' }}>
-                                                            {{ $col->job_category }}</option>
-                                                    @endforeach
-                                                </select>
-
-                                            </div>
-                                            <div class="col-md-6 form-group">
-
-                                                <label for="position_id"> የስራ መደብ</label>
-                                                <select class="form-control custom-select d-block w-100  positionofone"
-                                                    id="position_id" name="position_id"
-                                                    value="{{ old('position_id') }}">
-                                                    <option value="0" disabled="true" selected="true"> position
-                                                    </option>
-
-
-                                                </select>
-                                                <div id="detailsd" class=" font-20 ">
-
-
-                                                </div>
-                                                <div id="details" class=" ml-25 ">
-
-
-                                                </div>
-                                                <div id="details2" class=" ml-25 ">
-
-
-                                                </div>
-                                                <div id="details4" class=" ml-25 "></div>
-
-                                                <div id="details3" class=" ml-25 ">
-
-
-                                                </div>
-
-                                            </div>
-
-
-                                        </div>
-                                        <button class="text-white text-left mt-3 mb-4" style=" background-color:#6B021C">
-                                            ምርጫ 2</button>
-                                        <div class="row">
-                                            <div class="col-md-6 form-group">
-                                                <label for=""> የስራ ክፍሉ</label>
-
-
-                                                <select class="form-control custom-select d-block w-100  dynamic2"
-                                                    value="{{ old('jobcat2_id ') }}" name="jobcat2_id">
-                                                    <option value="">Chose </option>
-                                                    @foreach ($jobcat2 as $col)
-                                                        <option value="{{ $col->id }}"
-                                                            {{ old('jobcat2_id') == $col->id ? 'selected' : '' }}>
-                                                            {{ $col->job_category }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-
-                                            <div class="col-md-6 form-group">
-
-                                                <label for="choice2_id"> የስራ መደብ</label>
-                                                <select class="form-control custom-select d-block w-100  positionofone"
-                                                    id="choice2_id" name="choice2_id">
-                                                    <option value="0" disabled="true" selected="true"> position
-                                                    </option>
-
-
-                                                </select>
-                                                <div id="detaild" class=" font-20 "></div>
-                                                <div id="detail" class=" ml-25 ">
-
-
-                                                </div>
-                                                <div id="detail2" class=" ml-25 ">
-
-
-                                                </div>
-                                                <div id="detail4" class=" ml-25 "></div>
-
-                                                <div id="detail3" class=" ml-25 ">
-
-
-                                                </div>
-
-                                            </div>
-
-
-
-
-                                        </div> --}}
 
                                     </div>
 
@@ -366,7 +266,7 @@
 
                                     <div class="form-section ">
                                         <div class="row">
-                                            <div class="col-md-6 form-group">
+                                            {{-- <div class="col-md-6 form-group">
                                                 <label for="UniversityHiringEra">በዩኒቨርስቲዉ የቅጥር ዘመን በኢትዮጵያ
                                                     አቆጣጠር(ወር/ቀን/ዓመት)</label>
                                                 <input class="form-control"
@@ -379,8 +279,8 @@
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                 @enderror
-                                            </div>
-                                            <div class="col-md-6 form-group">
+                                            </div> --}}
+                                            {{-- <div class="col-md-6 form-group">
                                                 <label for="servicPeriodAtUniversity">በዩኒቨርስቲዉ አገልግሎት ዘመን (በዓመት,የስራ
                                                     መደብ)</label>
                                                 <input class="form-control"
@@ -434,7 +334,7 @@
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                 @enderror
-                                            </div>
+                                            </div> --}}
                                             <div class="col-md-6 form-group">
                                                 <label for="resultOfrecentPerform" class=""> የሁለት ተከታታይ የቅርብ ጊዜ
                                                     የሥራ
@@ -463,6 +363,18 @@
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                 @enderror
+                                            </div>
+                                             <div class="col-md-6 form-group">
+                                                <label for="disability"> አካል ጉዳተኛ</label>
+                                                <select class="form-control custom-select "value="{{ old('disability') }}"
+                                                    id="disability" name="disability">
+
+                                                    <option value="No " {{ old('disability') == 'No' ? 'selected' : '' }}>No
+                                                    </option>
+                                                    <option value="Yes"{{ old('disability') == 'Yes' ? 'selected' : '' }}>Yes
+                                                    </option>
+
+                                                </select>
                                             </div>
                                             <div class="col-md-6 form-group">
                                                 <label for="MoreRoles"> ተጨማሪ የሥራ ድርሻ</label>
