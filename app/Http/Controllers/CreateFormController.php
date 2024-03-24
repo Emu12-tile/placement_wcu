@@ -63,12 +63,12 @@ class CreateFormController extends Controller
             'phone' => 'nullable',
 
 
-            'positionofnow' => 'nullable',
-            'ethinicity' => 'nullable',
-            'birth_date' => 'nullable',
-            'jobcat' => 'nullable',
-            'level' => 'nullable',
-            'disability'=>'nullable',
+            'positionofnow' => 'required',
+            'ethinicity' => 'required',
+            'birth_date' => 'required',
+            'jobcat' => 'required',
+            'level' => 'required',
+            'disability'=>'required',
             'addMoreInputFields.*.startingDate' => 'date|nullable',
             'addMoreInputFields.*.endingDate' => 'date|after:starting_date|nullable',
             'addMoreInputFields.*.positionyouworked' => 'nullable',
@@ -79,7 +79,7 @@ class CreateFormController extends Controller
             // 'serviceAfterDiplo' => 'nullable',
             'resultOfrecentPerform' => 'required', 'regex:/^(?:d*.d{1,2}|d+)$/', 'min:1', 'max:100',
             'DisciplineFlaw' => 'required',
-            'MoreRoles' => 'nullable',
+            'MoreRoles' => 'required',
 
 
         ]);

@@ -45,7 +45,7 @@
                                         <input type="text" value="{{ $form->sex }}"
                                             name="sex"class="form-control " id="inputEmail3">
                                     </div>
-                                    <div class="col-md-6 form-group">
+                                    {{-- <div class="col-md-6 form-group">
                                         <label class="control-label mb-10" for="email">ኢሜይል (የ አ.ሳ.ቴን ኢሜይል ብቻ
                                             ይጠቀሙ) *</label>
                                         <div class="input-group">
@@ -54,12 +54,9 @@
                                             </div>
                                             <input type="email" value="{{ $form->email }}"
                                                 name="email"class="form-control" id="inputname" placeholder="email">
-
-
-
                                         </div>
 
-                                    </div>
+                                    </div> --}}
                                     <div class="col-md-6 form-group">
                                         <label class="control-label mb-10">ስልክ
                                             ቁጥር</label>
@@ -83,11 +80,7 @@
                                         <input type="text" value="{{ $form->ethinicity }}" name="ethinicity"
                                             class="form-control " id="inputEmail3">
                                     </div>
-                                    <div class="col-md-6 form-group">
-                                        <label for="birth_date">የትውልድ ዘመን </label>
-                                        <input type="text" value="{{ $form->birth_date }}" name="birth_date"
-                                            class="form-control " id="inputEmail3">
-                                    </div>
+
                                     {{-- value="{{ $form->level ?? '' }}" --}}
                                     <div class="col-md-6 form-group">
                                         <label for="jobcat">አሁን ያሉበት የስራ ክፍል </label>
@@ -98,6 +91,11 @@
                                         <label for="positionofnow">አሁን ያሉበት የስራ መደብ</label>
                                         <input type="text" value="{{ $form->positionofnow }}"
                                             name="positionofnow"class="form-control " id="inputEmail3">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label for="level">አሁን ያሉበት ደረጃ</label>
+                                        <input type="text" value="{{ $form->level }}" name="level"
+                                            class="form-control " id="inputEmail3">
                                     </div>
 
 
@@ -237,7 +235,7 @@
                                 </h3>
 
                                 <div class="row">
-                                    <div class="col-md-6 form-group">
+                                    {{-- <div class="col-md-6 form-group">
                                         <label for="UniversityHiringEra"> የቅጥር ዘመን በኢትዮጵያ
                                             አቆጣጠር</label>
                                         <input type="text" value="{{ $form->UniversityHiringEra }}"
@@ -269,7 +267,7 @@
                                         <label for="serviceAfterDiplo"> አገልግሎት ከዲፕሎማ/ዲግሪ በኋላ(በዓመት, የስራ መደብ)</label>
                                         <input type="text" value="{{ $form->serviceAfterDiplo }}"
                                             name="serviceAfterDiplo"class="form-control " id="serviceAfterDiplo">
-                                    </div>
+                                    </div> --}}
                                     <div class="col-md-6 form-group">
                                         <label for="resultOfrecentPerform" class=""> የሁለት ተከታታይ የቅርብ ጊዜ የሥራ
                                             አፈጻፀም አማካይ
@@ -283,6 +281,12 @@
                                         <input type="text" value="{{ $form->DisciplineFlaw }}"
                                             name="DisciplineFlaw"class="form-control " id="DisciplineFlaw">
                                     </div>
+                                    <div class="col-md-6 form-group">
+                                        <label for="MoreRoles">አካል ጉዳተኛ</label>
+                                        <input type="text" value="{{ $form->disability }}"
+                                            name="disability"class="form-control " id="disability">
+                                    </div>
+
                                     <div class="col-md-6 form-group">
                                         <label for="MoreRoles"> ተጨማሪ የሥራ ድርሻ</label>
                                         <input type="text" value="{{ $form->MoreRoles }}"

@@ -69,10 +69,12 @@
         <h3 style="text-align:center">የአስተዳደር ሠራተኞች ፕሮፋይል</h3>
         <p>1/ የሠራተኛው ሙሉ ስም:-{{ $form->firstName }} {{ $form->middleName }} {{ $form->lastName }} </p>
         <p>2/ አሁን ያሉበት የስራ ክፍል፦{{ $form->jobcat }} </p>
-        <p>2/ አሁን ያሉበት የስራ መደብ መጠርያ:-{{ $form->positionofnow }} &emsp;
-            ብሔር:-{{ $form->ethinicity }} &emsp; የትውልድ ዘመን:-{{ $form->birth_date }}
+        <p>3/ አሁን ያሉበት የስራ መደብ መጠርያ:-{{ $form->positionofnow }} &emsp; {{ $form->level }}
+
         </p>
-        <p>3/ የተማሩት የት/ት ዝግጅትና የት/ት ደረጃ:-
+        <p>4/ ብሔር:-{{ $form->ethinicity }}
+        </p>
+        <p>5/ የተማሩት የት/ት ዝግጅትና የት/ት ደረጃ:-
         </p>
         <table id="customers" class="mb-15">
             <thead>
@@ -117,14 +119,14 @@
                 @endforeach
             </tbody>
         </table>
-        <p>4/ በዩኒቨርስቲዉ የቅጥር
+        {{-- <p>4/ በዩኒቨርስቲዉ የቅጥር
             ዘመን በኢትዮጵያ አቆጣጠር:-
             {{ $form->UniversityHiringEra }}
 
         </p>
         <p>5/ በዩኒቨርስቲዉ አገልግሎት ዘመን:-{{ $form->servicPeriodAtUniversity }} </p>
-        <p>6/ በሌላ መስርያ ቤት አገልግሎት ዘመን:-{{ $form->servicPeriodAtAnotherPlace }} </p>
-        <h5>5/ የሚወዳደሩበት የስራ ክፍልና የስራ መደብ</h5>
+        <p>6/ በሌላ መስርያ ቤት አገልግሎት ዘመን:-{{ $form->servicPeriodAtAnotherPlace }} </p> --}}
+        <h5>6/ የሚወዳደሩበት የስራ ክፍልና የስራ መደብ</h5>
         <p> ምርጫ 1</p>
 
         <p> የስራ ክፍል :-{{ $form->job_category->job_category ?? '' }}</p>
@@ -134,7 +136,7 @@
         <p> የስራ ክፍል:- {{ $form->jobcat2->job_category ?? '' }} </p>
         <p> የስራ መደብ:- {{ $form->choice2->position ?? '' }}</p>
         <div class="html2pdf__page-break"></div>
-        <p>6/ ጠቅላላ የስራ ልምድ ብዛትና የስራው አይነት</p>
+        <p>7/ ጠቅላላ የስራ ልምድ ብዛትና የስራው አይነት</p>
 
         <table id="customers">
             <thead>
@@ -160,7 +162,7 @@
                 @foreach ($forms as $i => $fo)
                     <tr>
                         <td>{{ ++$i }}</td>
-                        {{-- <td>{{ date('m/d/y', strtotime($form->startingDate)) }}-{{ date('m/d/y', strtotime($form->endingDate)) }} --}}
+                        {{-- <>{{ date('m/d/y', strtotime($form->startingDate)) }}-{{ date('m/d/y', strtotime($form->endingDate)) }} --}}
                         <td>
                             {{-- {{ Carbon::createFromFormat( $fo->startingDate)->format('d/m/y') }}-{{ $fo->endingDate }} --}}
                             {{-- {{   Carbon::createFromFormat('m/d/Y', $fo->startingDate)->format('d-m-Y')}} --}}
@@ -171,7 +173,7 @@
                             እስከ
                             {{ Carbon::parse($fo->endingDate)->day }}/{{ Carbon::parse($fo->endingDate)->month }}/{{ Carbon::parse($fo->endingDate)->year }}
                         </td>
-                        </td>
+
                         <td>{{ $fo->positionyouworked }}</td>
                         <td>
                             <?php
@@ -230,16 +232,16 @@
                 @endforeach
             </tbody>
         </table>
-        <div class="html2pdf__page-break"></div>
+        {{-- <div class="html2pdf__page-break"></div>
         <p>9/ አገልግሎት ከዲፕሎማ/ዲግሪ በፊት:- {{ $form->serviceBeforeDiplo }} ፣ አገልግሎት ከዲፕሎማ/ዲግሪ በኋላ
-            {{ $form->serviceAfterDiplo }}</p>
-        <p>7/ የሁለት ተከታታይ የቅርብ ጊዜ የሥራ አፈጻፀም አማካይ ውጤት:-{{ $form->resultOfrecentPerform }}</p>
-        <p>8/ የዲስፕሊን ጉድለት:-{{ $form->DisciplineFlaw }}</p>
-        <p>9/ ተጨማሪ የሥራ ድርሻ:-{{ $form->MoreRoles }}</p>
+            {{ $form->serviceAfterDiplo }}</p> --}}
+        <p>8/ የሁለት ተከታታይ የቅርብ ጊዜ የሥራ አፈጻፀም አማካይ ውጤት:-{{ $form->resultOfrecentPerform }}</p>
+        <p>9/ የዲስፕሊን ጉድለት:-{{ $form->DisciplineFlaw }}</p>
+        <p>10/ ተጨማሪ የሥራ ድርሻ:-{{ $form->MoreRoles }}</p>
         <p>ቅጹን የሞላው ሰራተኛ ስም
             &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
             ፊርማ&mdash;&mdash;&mdash;&mdash; ቀን&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
-        <p>ስለትክክለኛነቱ ያረጋገጠው የሰዉ ሀብት ባለሙያ ፊርማ&mdash;&mdash;&mdash;&mdash;&mdash;
+        <p>ስለትክክለኛነቱ ያረጋገጠው የሰዉ ሀብት ባለሙያ &mdash;&mdash;{{ auth()->user()->name }} &mdash;ፊርማ&mdash;&mdash;&mdash;&mdash;&mdash;
             ቀን&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
         </p>
 

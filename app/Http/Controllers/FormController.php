@@ -334,15 +334,15 @@ class FormController extends Controller
 
         $form->resultOfrecentPerform = $request->Input('resultOfrecentPerform');
         $form->DisciplineFlaw = $request->Input('DisciplineFlaw');
-        $form->fee = $request->Input('fee');
+        $form->level = $request->Input('level');
 
-        $form->UniversityHiringEra = $request->Input('UniversityHiringEra');
-        $form->servicPeriodAtUniversity = $request->Input('servicPeriodAtUniversity');
-        $form->servicPeriodAtAnotherPlace = $request->Input('servicPeriodAtAnotherPlace');
+        // $form->UniversityHiringEra = $request->Input('UniversityHiringEra');
+        // $form->servicPeriodAtUniversity = $request->Input('servicPeriodAtUniversity');
+        // $form->servicPeriodAtAnotherPlace = $request->Input('servicPeriodAtAnotherPlace');
 
 
-        $form->serviceBeforeDiplo = $request->Input('serviceBeforeDiplo');
-        $form->serviceAfterDiplo = $request->Input('serviceAfterDiplo');
+        $form->jobcat = $request->Input('jobcat');
+        $form->disability = $request->Input('disability');
         $form->MoreRoles = $request->Input('MoreRoles');
 
 
