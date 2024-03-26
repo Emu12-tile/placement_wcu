@@ -238,10 +238,13 @@
         <p>8/ የሁለት ተከታታይ የቅርብ ጊዜ የሥራ አፈጻፀም አማካይ ውጤት:-{{ $form->resultOfrecentPerform }}</p>
         <p>9/ የዲስፕሊን ጉድለት:-{{ $form->DisciplineFlaw }}</p>
         <p>10/ ተጨማሪ የሥራ ድርሻ:-{{ $form->MoreRoles }}</p>
+        <p>ቅጹን ወደ ኮምፑተር የገለበጠው ባለሙያ {{ $form->registeredBy }}
+        </p>
         <p>ቅጹን የሞላው ሰራተኛ ስም
             &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
             ፊርማ&mdash;&mdash;&mdash;&mdash; ቀን&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
-        <p>ስለትክክለኛነቱ ያረጋገጠው የሰዉ ሀብት ባለሙያ &mdash;&mdash;{{ auth()->user()->name }} &mdash;ፊርማ&mdash;&mdash;&mdash;&mdash;&mdash;
+        <p>ስለትክክለኛነቱ ያረጋገጠው የሰዉ ሀብት ባለሙያ &mdash;&mdash;{{ auth()->user()->name }}
+            &mdash;ፊርማ&mdash;&mdash;&mdash;&mdash;&mdash;
             ቀን&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
         </p>
 

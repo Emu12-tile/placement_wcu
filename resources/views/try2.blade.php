@@ -6,9 +6,12 @@
                 <div class="col-xl-12">
 
                     <section class="hk-sec-wrapper mt-100">
-
-
-
+                        @if (session('success'))
+                            <div class="alert alert-success" id="success-message"
+                                style="background-color: green; color: white;">
+                                {{ session('success') }}
+                            </div>
+                        @endif
 
                         <h3 class="hk-sec-title text-white text-center color-wrap  "
                             style=" background-color:#6B021C; padding:10px;">ዋቸሞ ዩኒቨርሲቲ የሰራተኞች የስራ
@@ -93,7 +96,7 @@
                                                     </span>
                                                 @endif
                                             </div> --}}
-                                             <div class="col-md-6 form-group">
+                                            <div class="col-md-6 form-group">
                                                 <label for="ethinicity">ብሔር</label>
                                                 <input type="text" value="{{ old('ethinicity') }}"
                                                     class="form-control @error('ethinicity') is-invalid @enderror"
@@ -156,20 +159,18 @@
                                                 <label for="positionofnow">አሁን ያሉበት የስራ መደብ</label>
                                                 <input type="text" value="{{ old('positionofnow') }}"
                                                     class="form-control @error('positionofnow') is-invalid @enderror"
-                                                    id="positionofnow" placeholder="አሁን ያሉበት የስራ መደብ"
-                                                    name="positionofnow">
+                                                    id="positionofnow" placeholder="አሁን ያሉበት የስራ መደብ" name="positionofnow">
                                                 @error('positionofnow')
                                                     <span class=" error invalid-feedback">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                 @enderror
                                             </div>
-                                             <div class="col-md-6 form-group">
+                                            <div class="col-md-6 form-group">
                                                 <label for="level">አሁን ያሉበት ደረጃ</label>
                                                 <input type="text" value="{{ old('level') }}"
-                                                    class="form-control @error('level') is-invalid @enderror"
-                                                    id="level" placeholder="አሁን ያሉበት ደረጃ"
-                                                    name="level">
+                                                    class="form-control @error('level') is-invalid @enderror" id="level"
+                                                    placeholder="አሁን ያሉበት ደረጃ" name="level">
                                                 @error('level')
                                                     <span class=" error invalid-feedback">
                                                         <strong>{{ $message }}</strong>
@@ -364,14 +365,17 @@
                                                     </span>
                                                 @enderror
                                             </div>
-                                             <div class="col-md-6 form-group">
+                                            <div class="col-md-6 form-group">
                                                 <label for="disability"> አካል ጉዳተኛ</label>
                                                 <select class="form-control custom-select "value="{{ old('disability') }}"
                                                     id="disability" name="disability">
 
-                                                    <option value="No " {{ old('disability') == 'No' ? 'selected' : '' }}>No
+                                                    <option value="No "
+                                                        {{ old('disability') == 'No' ? 'selected' : '' }}>No
                                                     </option>
-                                                    <option value="Yes"{{ old('disability') == 'Yes' ? 'selected' : '' }}>Yes
+                                                    <option
+                                                        value="Yes"{{ old('disability') == 'Yes' ? 'selected' : '' }}>
+                                                        Yes
                                                     </option>
 
                                                 </select>
@@ -482,7 +486,12 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         $(document).ready(function() {
+
             var i = 0
+
+            setTimeout(function() {
+                $('#success-message').fadeOut('slow');
+            }, 5000);
             $(".addRow").click(function(e) {
                 ++i;
                 e.preventDefault();

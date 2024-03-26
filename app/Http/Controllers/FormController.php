@@ -34,22 +34,36 @@ class FormController extends Controller
 
     public function index()
     {
-        // $level = Level::all();
-        // $form = Form::all();
+        $forms = null;
+        $searchValue = request()->input('search');
 
-        // $edu_level = EduLevel::all();
-        // $job_category = JobCategory::all();
+        if ($searchValue) {
+            $searchWords = explode(' ', $searchValue);
 
-        // $position = Position::join('categories', 'categories.id', '=', 'positions.category_id')
-        //     ->where('categories.catstatus', 'active')->get();
-        // $jobcat2 = jobcat2::all();
-        // $edutype = EducationType::all();
-        // return view('try2', compact('level', 'edu_level', 'job_category', 'position', 'jobcat2', 'edutype', 'form'));
+            $forms = Form::where('hrs', null)
+                ->where(function ($query) use ($searchWords) {
+                    foreach ($searchWords as $word) {
+                        $query->where(function ($innerQuery) use ($word) {
+                            $innerQuery->where('firstName', 'like', '%' . $word . '%')
+                                ->orWhere('middleName', 'like', '%' . $word . '%')
+                                ->orWhere('lastName', 'like', '%' . $word . '%');
+                        });
+                    }
+                })
+                ->select('firstName', 'middleName', 'lastName', 'id', 'job_category_id', 'jobcat2_id', 'position_id', 'choice2_id',  'isEditable')
+                ->paginate(10);
+        } else {
+            $searchValue = null;
+            // Only fetch all data when there's no search value
+            $forms = Form::where('hrs', null)
+                ->select('firstName', 'middleName', 'lastName', 'id', 'job_category_id', 'jobcat2_id', 'position_id', 'choice2_id',  'isEditable')
+                ->paginate(10);
+        }
 
-        $forms = Form::where('hrs', null)->select('firstName', 'middleName', 'lastName', 'id', 'job_category_id', 'jobcat2_id', 'position_id', 'choice2_id', 'isEditable')->get();
-
-
-        return view('hr.index', ['forms' => $forms]);
+        return view('hr.index', [
+            'forms' => $forms,
+            'searchValue' => $searchValue,
+        ]);
     }
 
     public function form()

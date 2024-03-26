@@ -158,7 +158,7 @@ class CreateFormController extends Controller
         }
 
         // dd($form);
-        return redirect('createform');
+        return redirect('createform')->with('success', 'Form submitted successfully!')->with('fadeout', true);
     }
 
     /**
