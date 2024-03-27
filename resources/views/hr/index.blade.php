@@ -514,7 +514,7 @@
 
                 <div class="row" id="search_list">
                     <div class="col-sm">
-                        <div class="table-wrap">
+                        {{-- <div class="table-wrap">
                              <div class="float-right mb-3">
                             <form action="{{ route('hr.index') }}" method="GET" class="form-inline">
                                 <div class="input-group">
@@ -525,105 +525,104 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>
+                        </div> --}}
 
-                            <table id="datable_3" class="table table-hover  table-bordered w-100  pb-30">
-                                <thead>
-                                    <tr>
-                                        <th>ተቁ</th>
-                                        <th>ሙሉ ስም</th>
-                                        <th>የስራ ክፍል/የስራ መደብ(1ኛ ምርጫ)</th>
-                                        <th>የስራ ክፍል/የስራ መደብ(2ኛ ምርጫ)</th>
+                        <table id="datable_1" class="table table-hover  table-bordered w-100  pb-30">
+                            <thead>
+                                <tr>
+                                    <th>ተቁ</th>
+                                    <th>ሙሉ ስም</th>
+                                    <th>የስራ ክፍል/የስራ መደብ(1ኛ ምርጫ)</th>
+                                    <th>የስራ ክፍል/የስራ መደብ(2ኛ ምርጫ)</th>
 
-                                        <th> action</th>
-
-
-                                        <th>Submit</th>
-                                        <th>pdf</th>
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    $j = 0;
-                                    ?>
-                                    @foreach ($forms as $i => $form)
-                                        @if ($form->isEditable == 0)
-                                            <tr>
-                                                <td>{{ ++$j }}</td>
-                                                <td>
-
-                                                    {{ $form->full_name }}
-
-                                                </td>
+                                    <th> action</th>
 
 
+                                    <th>Submit</th>
+                                    <th>pdf</th>
 
-                                                <td>{{ $form->job_category->job_category ?? 'to be selected' }}\
-                                                    {{ $form->position->position ?? 'to be selected' }}</td>
-                                                <td>{{ $form->jobcat2->job_category ?? 'to be selected' }}\
-                                                    {{ $form->choice2->position ?? 'to be selected' }}
-                                                </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $j = 0;
+                                ?>
+                                @foreach ($forms as $i => $form)
+                                    @if ($form->isEditable == 0)
+                                        <tr>
+                                            <td>{{ ++$j }}</td>
+                                            <td>
+
+                                                {{ $form->full_name }}
+
+                                            </td>
 
 
 
-                                                <td><a class="btn  bg-blue-dark-4 text-white btn-sm" type="submit"
-                                                        id="btn-evaluate" href="{{ route('hr.show', $form->id) }}">Edit</a>
-                                                </td>
-
-                                                <td> <button type="button" class="btn bg-green-dark-4 text-white btn-sm"
-                                                        data-toggle="modal" data-target="#id1_{{ $i }}">
-                                                        Submit
-                                                    </button>
+                                            <td>{{ $form->job_category->job_category ?? 'to be selected' }}\
+                                                {{ $form->position->position ?? 'to be selected' }}</td>
+                                            <td>{{ $form->jobcat2->job_category ?? 'to be selected' }}\
+                                                {{ $form->choice2->position ?? 'to be selected' }}
+                                            </td>
 
 
-                                                    <div class="modal fade" id="id1_{{ $i }}" tabindex="-1"
-                                                        role="dialog" aria-labelledby="exampleModalCenter"
-                                                        aria-hidden="true">
-                                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title">Submission</h5>
-                                                                    <button type="button" class="close"
-                                                                        data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <p>Are you sure do you want to submit
-                                                                        {{ $form->full_name }}?
 
-                                                                    </p>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary"
-                                                                        data-dismiss="modal">Close</button>
-                                                                    <form action="{{ route('hr.update', $form->id) }}"
-                                                                        method="POST" enctype="multipart/form-data">
-                                                                        @csrf
+                                            <td><a class="btn  bg-blue-dark-4 text-white btn-sm" type="submit"
+                                                    id="btn-evaluate" href="{{ route('hr.show', $form->id) }}">Edit</a>
+                                            </td>
 
-                                                                        @method('PUT')
-                                                                        <button type="submit" class="btn btn-green">
-                                                                            Yes</button>
-                                                                    </form>
-                                                                </div>
+                                            <td> <button type="button" class="btn bg-green-dark-4 text-white btn-sm"
+                                                    data-toggle="modal" data-target="#id1_{{ $i }}">
+                                                    Submit
+                                                </button>
+
+
+                                                <div class="modal fade" id="id1_{{ $i }}" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenter" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Submission</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <p>Are you sure do you want to submit
+                                                                    {{ $form->full_name }}?
+
+                                                                </p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                                <form action="{{ route('hr.update', $form->id) }}"
+                                                                    method="POST" enctype="multipart/form-data">
+                                                                    @csrf
+
+                                                                    @method('PUT')
+                                                                    <button type="submit" class="btn btn-green">
+                                                                        Yes</button>
+                                                                </form>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </td>
-                                                <td><a class="btn  bg-red-dark-4 text-white btn-sm" type="submit"
-                                                        id="btn-evaluate" href="{{ route('export_pdf', $form->id) }}">pdf</a>
-                                                </td>
+                                                </div>
+                                            </td>
+                                            <td><a class="btn  bg-red-dark-4 text-white btn-sm" type="submit"
+                                                    id="btn-evaluate" href="{{ route('export_pdf', $form->id) }}">pdf</a>
+                                            </td>
 
-                                            </tr>
-                                        @endif
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+                                        </tr>
+                                    @endif
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </section>
+        </div>
+        </section>
         </div>
     @endsection
 @endrole

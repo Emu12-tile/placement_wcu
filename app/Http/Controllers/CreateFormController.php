@@ -65,7 +65,7 @@ class CreateFormController extends Controller
 
             'positionofnow' => 'required',
             'ethinicity' => 'required',
-            'birth_date' => 'required',
+            'birth_date' => 'nullable',
             'jobcat' => 'required',
             'level' => 'required',
             'disability'=>'required',
@@ -158,6 +158,7 @@ class CreateFormController extends Controller
         }
 
         // dd($form);
+        //  return redirect('createform');
         return redirect('createform')->with('success', 'Form submitted successfully!')->with('fadeout', true);
     }
 

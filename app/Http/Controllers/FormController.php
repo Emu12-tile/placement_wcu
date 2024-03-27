@@ -31,40 +31,44 @@ use Illuminate\Support\Facades\View;
 class FormController extends Controller
 {
 
-
     public function index()
     {
-        $forms = null;
-        $searchValue = request()->input('search');
-
-        if ($searchValue) {
-            $searchWords = explode(' ', $searchValue);
-
-            $forms = Form::where('hrs', null)
-                ->where(function ($query) use ($searchWords) {
-                    foreach ($searchWords as $word) {
-                        $query->where(function ($innerQuery) use ($word) {
-                            $innerQuery->where('firstName', 'like', '%' . $word . '%')
-                                ->orWhere('middleName', 'like', '%' . $word . '%')
-                                ->orWhere('lastName', 'like', '%' . $word . '%');
-                        });
-                    }
-                })
-                ->select('firstName', 'middleName', 'lastName', 'id', 'job_category_id', 'jobcat2_id', 'position_id', 'choice2_id',  'isEditable')
-                ->paginate(10);
-        } else {
-            $searchValue = null;
-            // Only fetch all data when there's no search value
-            $forms = Form::where('hrs', null)
-                ->select('firstName', 'middleName', 'lastName', 'id', 'job_category_id', 'jobcat2_id', 'position_id', 'choice2_id',  'isEditable')
-                ->paginate(10);
-        }
-
-        return view('hr.index', [
-            'forms' => $forms,
-            'searchValue' => $searchValue,
-        ]);
+        $forms = Form::where('hrs', null)->select('firstName', 'middleName', 'lastName', 'id', 'job_category_id', 'jobcat2_id', 'position_id', 'choice2_id', 'isEditable')->get();
+        return view('hr.index', ['forms' => $forms]);
     }
+    // public function index()
+    // {
+    //     $forms = null;
+    //     $searchValue = request()->input('search');
+
+    //     if ($searchValue) {
+    //         $searchWords = explode(' ', $searchValue);
+
+    //         $forms = Form::where('hrs', null)
+    //             ->where(function ($query) use ($searchWords) {
+    //                 foreach ($searchWords as $word) {
+    //                     $query->where(function ($innerQuery) use ($word) {
+    //                         $innerQuery->where('firstName', 'like', '%' . $word . '%')
+    //                             ->orWhere('middleName', 'like', '%' . $word . '%')
+    //                             ->orWhere('lastName', 'like', '%' . $word . '%');
+    //                     });
+    //                 }
+    //             })
+    //             ->select('firstName', 'middleName', 'lastName', 'id', 'job_category_id', 'jobcat2_id', 'position_id', 'choice2_id',  'isEditable')
+    //             ->paginate(10);
+    //     } else {
+    //         $searchValue = null;
+    //         // Only fetch all data when there's no search value
+    //         $forms = Form::where('hrs', null)
+    //             ->select('firstName', 'middleName', 'lastName', 'id', 'job_category_id', 'jobcat2_id', 'position_id', 'choice2_id',  'isEditable')
+    //             ->paginate(10);
+    //     }
+
+    //     return view('hr.index', [
+    //         'forms' => $forms,
+    //         'searchValue' => $searchValue,
+    //     ]);
+    // }
 
     public function form()
     {

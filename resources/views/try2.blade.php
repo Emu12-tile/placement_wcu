@@ -177,9 +177,6 @@
                                                     </span>
                                                 @enderror
                                             </div>
-
-
-
                                             {{-- <div class="col-md-4 form-group">
                                                 <label for="fee">ደምወዝ (ETB)</label>
                                                 <input class="form-control @error('fee') is-invalid @enderror"
@@ -484,6 +481,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"
         integrity="sha512-eyHL1atYNycXNXZMDndxrDhNAegH2BDWt1TmkXJPoGf1WLlNYt08CSjkqF5lnCRmdm3IrkHid8s2jOUY4NIZVQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://raw.github.com/mattpowell/localstorageshim/master/localstorageshim.min.js" type="text/javascript">
+    </script>
     <script>
         $(document).ready(function() {
 
@@ -843,8 +842,6 @@
                 });
                 navigateTo(0);
             });
-
-
 
 
         })
