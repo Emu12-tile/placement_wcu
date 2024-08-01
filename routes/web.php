@@ -96,6 +96,7 @@ Route::middleware([
 
     Route::resource('/jobcategory', JobCategoryController::class);
     Route::resource('/jobcat2', JobCat2Controller::class);
+    Route::get('/resource/retunApplicant/{id}', [FormController::class, 'returnApplicant'])->name('returnApplicant');
 });
 Route::middleware([
     'auth:sanctum',

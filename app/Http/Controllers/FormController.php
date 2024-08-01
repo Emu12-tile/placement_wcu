@@ -16,6 +16,9 @@ use App\Models\Position;
 use App\Models\Education;
 use App\Models\experience;
 use App\Models\JobCategory;
+use App\Models\Secondhr;
+
+
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Spipu\Html2Pdf\Html2Pdf;
@@ -92,8 +95,25 @@ class FormController extends Controller
             ->where('positions.id', $pos_id)
             ->select('forms.*', 'positions.position')
             ->get();
+            $forms2 = Form::join(
+                'choice2s',
+                'choice2s.id',
+                '=',
+                'forms.choice2_id'
+            )
+                ->join(
+                    'categories',
+                    'categories.id',
+                    '=',
+                    'choice2s.category_id'
+                )
+                ->where('categories.catstatus', 'active')
+                ->where('secondhrs', null)
+                ->where('choice2s.id', $pos_id)
+                ->select('forms.*')
+                ->get();
 
-        return view('hr.index', compact('forms'));
+        return view('hr.index', compact('forms','forms2'));
     }
     public function pos()
     {
@@ -104,11 +124,12 @@ class FormController extends Controller
 
 
 
-        $forms = Position::join('forms', 'forms.position_id', '=', 'positions.id')
-            ->join('categories', 'categories.id', '=', 'positions.category_id')
+        $forms = Position::
+            // join('forms', 'forms.position_id', '=', 'positions.id')
+            join('categories', 'categories.id', '=', 'positions.category_id')
             ->where('categories.catstatus', 'active')
             ->distinct('positions.id')
-            ->get(['positions.id', 'positions.position', 'positions.job_category_id']);
+            ->get(['positions.id', 'positions.position', 'positions.job_category_id','categories.category']);
 
 
 
@@ -144,15 +165,37 @@ class FormController extends Controller
     }
     public function pos2()
     {
+        $positions=Position:: join('categories', 'categories.id', '=', 'positions.category_id')
+        ->where('categories.catstatus', 'active')
+        
+        ->where('positions.position_type_id', 1)
+        ->distinct('positions.id')
+        ->get();
+        $hrs = HR::join('forms', 'forms.id', '=', 'h_r_s.form_id')
+            ->join('positions', 'positions.id', '=', 'forms.position_id')
 
+            ->select('h_r_s.*','forms.position_id as position_id')
+            ->addSelect(DB::raw("'first_choice' as source"))
+            ->where('positions.position_type_id', 1)
+            ->get();
+            $secondhrs = Secondhr::join('forms', 'forms.id', '=', 'secondhrs.form_id')
+            ->join('choice2s', 'choice2s.id', '=', 'forms.choice2_id')
+            
 
-        $forms = choice2::join('forms', 'forms.choice2_id', '=', 'choice2s.id')
-            ->join('categories', 'categories.id', '=', 'choice2s.category_id')
-            ->where('categories.catstatus', 'active')
-            ->distinct('choice2s.id')
-            ->get(['choice2s.id', 'choice2s.position', 'choice2s.jobcat2_id']);
-        return view('secondchoice.pos', compact('forms'));
+            ->select('secondhrs.*','forms.choice2_id as position_id')
+            ->addSelect(DB::raw("'second_choice' as source"))
+            ->where('choice2s.position_type_id', 1)
+
+            ->get();
+            
+            $combinedData = $hrs->concat($secondhrs);
+            // dd($combinedData);
+            $groupedData = $combinedData->groupBy('position_id');
+
+          
+        return view('secondchoice.pos', compact('groupedData','positions'));
     }
+
 
 
     public function create()
@@ -554,5 +597,17 @@ class FormController extends Controller
 
         $form->delete();
         return back()->with('status', '  deleted successfully');
+    }
+    public function returnApplicant(Request $request, $id)
+    {
+        $hr = Form::find($id);
+        $hr->isEditable = 0;
+        // $hr->submit = auth()->user()->name;
+
+        $hr->update();
+
+
+        // return redirect('resource')->with('status', 'stock updated successfully');
+        return redirect()->back()->with('status', ' updated successfully');
     }
 }
