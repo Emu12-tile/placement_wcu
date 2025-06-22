@@ -45,7 +45,7 @@
                                             <td>{{ ++$i }}</td>
                                             <td>{{ $admin->position }}
                                             </td>
-                                            <td>{{ $admin->job_category->job_category }}
+                                            <td>{{ $admin->job_category?->job_category }}
                                             </td>
                                             {{-- <td>{{ $admin->edu_level->education_level }}
                                             </td> --}}

@@ -123,7 +123,7 @@
                                             <form action="" method="POST"><a
                                                     href="{{ route('posDetail', $form->id) }}" class="mr-25"
                                                     data-toggle="tooltip"
-                                                    data-original-title="show">{{ $form->job_category->job_category }}\{{ $form->position }}
+                                                    data-original-title="show">{{ $form->job_category?->job_category }}\{{ $form->position }}
                                                 </a>
                                             </form>
                                         </td>

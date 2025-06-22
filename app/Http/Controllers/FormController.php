@@ -36,7 +36,7 @@ class FormController extends Controller
 
     public function index()
     {
-        $forms = Form::where('hrs', null)->select('firstName', 'middleName', 'lastName', 'id', 'job_category_id', 'jobcat2_id', 'position_id', 'choice2_id', 'isEditable')->get();
+        $forms = Form::where('hrs', null)->select('firstName', 'middleName', 'lastName', 'id', 'job_category_id', 'jobcat2_id', 'position_id', 'choice2_id', 'isEditable','submit')->get();
         return view('hr.index', ['forms' => $forms]);
     }
     // public function index()
@@ -117,13 +117,6 @@ class FormController extends Controller
     }
     public function pos()
     {
-
-
-
-
-
-
-
         $forms = Position::
             // join('forms', 'forms.position_id', '=', 'positions.id')
             join('categories', 'categories.id', '=', 'positions.category_id')

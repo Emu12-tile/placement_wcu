@@ -19,7 +19,7 @@
                 <div class="col-sm">
                     <div class="table-wrap">
 
-                        <table id="datable_6" class="table table-hover table-bordered w-100  pb-30">
+                        <table id="datable_1" class="table table-hover table-bordered w-100  pb-30">
                             <thead>
                                 <tr>
                                     <th>ተ.ቁ</th>
@@ -348,7 +348,7 @@
                 <div class="col-sm">
                     <div class="table-wrap">
 
-                        <table id="datable_9" class="table table-hover table-bordered w-100  pb-30">
+                        <table id="datable_8" class="table table-hover table-bordered w-100  pb-30">
                             <thead>
                                 <tr>
                                     <th>ተ.ቁ</th>
@@ -612,7 +612,7 @@
                 <div class="col-sm">
                     <div class="table-wrap">
 
-                        <table id="datable_7" class="table table-hover table-bordered w-100  pb-30">
+                        <table id="datable_6" class="table table-hover table-bordered w-100  pb-30">
                             <thead>
                                 <tr>
                                     <th>ተ.ቁ</th>
